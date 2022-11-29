@@ -8,24 +8,10 @@
     <title>Document</title>
   </head>
   <body>
-    <div style="display: none">모달창0</div>
-    <div style="display: none">모달창1</div>
-    <div style="display: none">모달창2</div>
-
-    <button>버튼1</button>
-    <button>버튼2</button>
-    <button>버튼3</button>
-
-    <script>
-      let buttons = document.querySelectorAll('button');
-      let modals = document.querySelectorAll('div');
-
-      for (var i = 0; i < 3; i++) {
-        buttons[i].addEventListener('click', function () {
-          modals[i].style.display = 'block';
-        });
-      }
+    <script></script>
+    <script type="module">
+      import * as all from '/library.js';
+      console.log(all);
     </script>
-    <script src="script.js"></script>
   </body>
 </html>
