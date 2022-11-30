@@ -1,10 +1,14 @@
-function func1(a) {
-  console.log(1);
-  a();
-}
+let promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log(1);
+    resolve();
+  }, 5000);
+});
 
-function func2() {
-  console.log(2);
-}
-
-func1(func2);
+promise
+  .then(() => {
+    console.log('success');
+  })
+  .catch(() => {
+    console.log('fail!');
+  });
