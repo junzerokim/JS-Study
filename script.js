@@ -1,14 +1,19 @@
 let promise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    console.log(1);
-    resolve();
-  }, 5000);
+  $.get('https://codingapple1.github.io/hello.txt').done((result) => {
+    resolve(result);
+  });
 });
 
 promise
-  .then(() => {
-    console.log('success');
+  .then((result) => {
+    console.log(result);
+    let promise2 = new Promise((resolve, reject) => {
+      $.get('https://codingapple1.github.io/hello2.txt').done((result) => {
+        resolve(result);
+      });
+    });
+    return promise2;
   })
-  .catch(() => {
-    console.log('fail!');
+  .then((result) => {
+    console.log(result);
   });
