@@ -1,13 +1,22 @@
+let btn = document.querySelector('.btn');
+
+btn.addEventListener('click', async function click() {
+  async function msg() {
+    return '성공했어요';
+  }
+  let result = await msg();
+  console.log(result);
+});
+
 async function add() {
-  async function calc() {
-    return Promise.reject();
-  }
-  try {
-    let result = await calc();
-    console.log('성공');
-  } catch {
-    console.log('실패');
-  }
+  let prm = new Promise((resolve, reject) => {
+    document.querySelector('.btn2').addEventListener('click', function () {
+      resolve('성공2');
+    });
+  });
+
+  let result = await prm;
+  console.log(result);
 }
 
 add();
