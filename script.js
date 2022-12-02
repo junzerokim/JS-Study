@@ -1,22 +1,23 @@
-let btn = document.querySelector('.btn');
+// class Parent {}
 
-btn.addEventListener('click', async function click() {
-  async function msg() {
-    return '성공했어요';
+// Parent.prototype.name = 'Kim';
+
+// let object = new Parent();
+
+// for (let key in object) {
+//   console.log(object[key]);
+// }
+
+// let array = [2, 3, 4, 5];
+
+// for (let key of array) {
+//   console.log(key);
+// }
+
+let data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+for (let i of data) {
+  for (let j of data) {
+    console.log(`${i + 1} x ${j} = ${(i + 1) * j}`);
   }
-  let result = await msg();
-  console.log(result);
-});
-
-async function add() {
-  let prm = new Promise((resolve, reject) => {
-    document.querySelector('.btn2').addEventListener('click', function () {
-      resolve('성공2');
-    });
-  });
-
-  let result = await prm;
-  console.log(result);
 }
-
-add();
