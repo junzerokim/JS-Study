@@ -1,23 +1,13 @@
-// class Parent {}
+let symbol1 = Symbol('hello');
 
-// Parent.prototype.name = 'Kim';
+let weight = Symbol('secret weight');
+let height = Symbol('secret height');
 
-// let object = new Parent();
+let person = { name: 'Kim' };
+person.weight = 70;
+person[weight] = 80; // enumerable 하지 않기 때문에 반복문에 출력되지 않는다.
+person[height] = 175; // enumerable 하지 않기 때문에 반복문에 출력되지 않는다.
 
-// for (let key in object) {
-//   console.log(object[key]);
-// }
-
-// let array = [2, 3, 4, 5];
-
-// for (let key of array) {
-//   console.log(key);
-// }
-
-let data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-for (let i of data) {
-  for (let j of data) {
-    console.log(`${i} x ${j} = ${i * j}`);
-  }
+for (let key in person) {
+  console.log(person[key]);
 }
