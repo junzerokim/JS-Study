@@ -1,13 +1,17 @@
-let symbol1 = Symbol('hello');
+let person = ['john', 'jun', 'peter', 'jun'];
+let person2 = new Set(person);
 
-let weight = Symbol('secret weight');
-let height = Symbol('secret height');
+let person3 = [...person];
+console.log(person3);
 
-let person = { name: 'Kim' };
-person.weight = 70;
-person[weight] = 80; // enumerable 하지 않기 때문에 반복문에 출력되지 않는다.
-person[height] = 175; // enumerable 하지 않기 때문에 반복문에 출력되지 않는다.
+person2.add('james'); // 추가
+person2.delete('peter'); // 제거
+person2.has('john'); // 유무 확인
 
-for (let key in person) {
-  console.log(person[key]);
-}
+console.log(person2);
+
+// let person = new Map();
+// person.set('name', 'Kim');
+// person.set('age', 30);
+
+// console.log(person.get('name'));
