@@ -1,17 +1,14 @@
-let person = ['john', 'jun', 'peter', 'jun'];
-let person2 = new Set(person);
+class hello extends HTMLElement {
+  connectedCallback() {
+    let name = this.getAttribute('name');
+    this.innerHTML = `<h2>${name}  안녕하세요</h2>`;
+  }
+  static get observedAttributes() {
+    return ['name'];
+  }
+  attributesChangedCallback() {
+    console.log(this.getAttribute('name'));
+  }
+}
 
-let person3 = [...person];
-console.log(person3);
-
-person2.add('james'); // 추가
-person2.delete('peter'); // 제거
-person2.has('john'); // 유무 확인
-
-console.log(person2);
-
-// let person = new Map();
-// person.set('name', 'Kim');
-// person.set('age', 30);
-
-// console.log(person.get('name'));
+customElements.define('custom-input', hello);
